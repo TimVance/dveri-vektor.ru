@@ -1,0 +1,64 @@
+/* Телефон xs*/
+@media screen and (max-width: 480px) {
+
+}
+
+/* Телефон sm Конкретный*/
+@media (min-width: 481px) and (max-width: 576px) {
+
+}
+/* Телефон sm Общий*/
+@media screen and (max-width: 576px) {
+	/*.offcanvas-collapse {
+		position: fixed;
+		top: 56px;
+		bottom: 0;
+		right: 100%;
+		width: 100%;
+		padding-right: 1rem;
+		padding-left: 1rem;
+		overflow-y: auto;
+		visibility: hidden;
+		background-color: #343a40;
+		transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+	}
+	.offcanvas-collapse.open {
+	visibility: visible;
+	transform: translateX(100%);
+	}*/
+}
+
+/* Планшет md Конкретный*/
+@media (min-width: 577px) and (max-width: 768px) {
+
+}
+/* Планшет md Общий*/
+@media screen and (max-width: 768px) {
+
+}
+
+/* Экран lg Конкретный*/
+@media (min-width: 769px) and (max-width: 991px) {
+
+}
+/* Экран lg Общий*/
+@media screen and (max-width: 991px) {
+	.korzina_block {
+		width: 48px;
+		height: 48px;
+	}
+}
+
+/* Экран xl Конкретный*/
+@media (min-width: 992px) and (max-width: 1199px){
+
+}
+/* Экран xl Общий*/
+@media screen and (max-width: 1199px){
+
+}
+
+/* только Экран больше 1200px*/
+@media (min-width: 1200px){
+
+}
