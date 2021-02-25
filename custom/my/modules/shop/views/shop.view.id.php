@@ -181,6 +181,11 @@ echo '<div class="shop-item-center col">';
 			//echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
 		}
 
+		echo '<div style="display: none" class="js-text-params">';
+		foreach ($result["ids_param"] as $param) {
+		    if (!empty($param["text"])) echo '<span data-id="'.$param["id"].'">'.$param["text"].'</span>';
+        }
+		echo '</div>';
 		echo '<div class="js-param-depends-price"></div>';
 
 /*		if(empty($result["hide_compare"]))
@@ -344,5 +349,18 @@ echo '</div>';
         opacity: 0;
         visibility: hidden;
         position: absolute;
+    }
+    .param-title span {
+        font-size: 15px;
+        background-color: #009846;
+        color: #fff;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 16px;
+        margin-left: 5px;
+        cursor: pointer;
     }
 </style>
