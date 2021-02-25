@@ -178,8 +178,10 @@ echo '<div class="shop-item-center col">';
 		//характеристики товара
 		if(! empty($result["param"]))
 		{
-			echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
+			//echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
 		}
+
+		echo '<div class="js-param-depends-price"></div>';
 
 /*		if(empty($result["hide_compare"]))
 		{
@@ -314,3 +316,33 @@ echo '</div>';
 	echo '</div>';
 }*/
 /*echo $this->htmleditor('<insert name="show_block_rel" module="shop" count="4" images="1" defer="emergence" defer_title="Похожие товары">');*/
+
+?>
+
+<style>
+    .js-param-depends-price label span {
+        display: inline-block;
+        padding: 2px 5px;
+        border: 1px solid #066cbe;
+        cursor: pointer;
+        margin: 0 5px 5px 0;
+        font-size: 14px;
+    }
+    .js-param-depends-price label input:checked + span {
+        background-color: #066cbe;
+        color: #fff;
+    }
+    .param-block {
+        margin-bottom: 20px;
+    }
+    .param-title {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #066cbe;
+    }
+    .js_shop_form_param {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+    }
+</style>
