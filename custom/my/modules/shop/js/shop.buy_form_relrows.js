@@ -239,11 +239,11 @@ function select_param_price(th, current_param) {
 
 
 function empty_param_price(th) {
-  if (! $('.js_shop_param_price', th).length || $('.js_form_option_selected', th).length)
+  if (! $('.tab-pane .js_shop_param_price', th).length || $('.tab-pane .js_form_option_selected', th).length)
     return;
 
-  $('.js_shop_param_price', th).each(function () {
-    if (!$(".js_shop_no_buy", this).length) {
+  $('.tab-pane .js_shop_param_price', th).each(function () {
+    if (!$(".tab-pane .js_shop_no_buy", this).length) {
       for (var i = 0, atts = $(this).get(0).attributes, n = atts.length; i < n; i++) {
         if (atts[i].nodeName.indexOf("param") > -1) {
           $("select[name='" + atts[i].nodeName + "']", th).val(atts[i].nodeValue);

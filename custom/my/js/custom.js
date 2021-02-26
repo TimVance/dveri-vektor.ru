@@ -6,6 +6,7 @@ $(function() {
         startDelay: 1000,
         backDelay: 2000,
         showCursor: true,
-        shuffle: true
+        shuffle: true,
+        loop: true,
     });
 });
