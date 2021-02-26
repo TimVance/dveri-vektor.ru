@@ -997,11 +997,9 @@ details summary::-webkit-details-marker {
     color: #066cbe;
 }
 .js_shop_form_param {
-    /*
     opacity: 0;
     visibility: hidden;
     position: absolute;
-     */
 }
 .param-title span {
     font-size: 15px;
