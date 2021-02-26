@@ -252,23 +252,43 @@ echo '</div>';
 echo '<div class="shop-item-opis col-12 mt-5">';
 	//полное описание товара
 //	echo '<div class="shop_text mt-5 mb-3">'.$this->htmleditor($result['text']).'</div>';
-	echo '<ul class="nav nav-tabs justify-content-start justify-content-lg-between py-0" id="tovarIDtab" role="tablist">
-		<li class="nav-item" role="presentation">
-		<button class="nav-link fs_18 border-0 b_none c_llblue out_none active" id="complectuyushie-tab" data-bs-toggle="tab" data-bs-target="#complectuyushie" type="button" role="tab" aria-controls="complectuyushie" aria-selected="true">Комплектующие</button>
-		</li>
-		<li class="nav-item" role="presentation">
-		<button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="opisanie-tab" data-bs-toggle="tab" data-bs-target="#opisanie" type="button" role="tab" aria-controls="opisanie" aria-selected="false">Описание</button>
-		</li>
-		<li class="nav-item" role="presentation">
-		<button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="detali-tab" data-bs-toggle="tab" data-bs-target="#detali" type="button" role="tab" aria-controls="detali" aria-selected="false">Детали</button>
-		</li>
-		<li class="nav-item" role="presentation">
-		<button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="harakteristiki-tab" data-bs-toggle="tab" data-bs-target="#harakteristiki" type="button" role="tab" aria-controls="harakteristiki" aria-selected="false">Характеристики</button>
-		</li>
-		<li class="nav-item" role="presentation">
-		<button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Видео</button>
-		</li>
-		<li class="nav-item" role="presentation">
+	echo '<ul class="nav nav-tabs justify-content-start justify-content-lg-between py-0" id="tovarIDtab" role="tablist">';
+
+        if (!empty($this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" defer="emergence" defer_title="Комплектующие" template="relrows">'))) {
+            echo '
+            <li class="nav-item" role="presentation">
+            <button class="nav-link fs_18 border-0 b_none c_llblue out_none active" id="complectuyushie-tab" data-bs-toggle="tab" data-bs-target="#complectuyushie" type="button" role="tab" aria-controls="complectuyushie" aria-selected="true">Комплектующие</button>
+            </li>';
+        }
+
+        if (!empty($this->htmleditor($result['text']))) {
+            echo '
+                <li class="nav-item" role="presentation">
+                <button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="opisanie-tab" data-bs-toggle="tab" data-bs-target="#opisanie" type="button" role="tab" aria-controls="opisanie" aria-selected="false">Описание</button>
+                </li>';
+        }
+
+	    if (!empty($this->htmleditor('<insert name="show_dynamic" module="site" id="4">'))) {
+	        echo '
+	        	<li class="nav-item" role="presentation">
+                    <button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="detali-tab" data-bs-toggle="tab" data-bs-target="#detali" type="button" role="tab" aria-controls="detali" aria-selected="false">Детали</button>
+                </li>
+	        ';
+	    }
+
+        if(! empty($result["param"])) {
+            echo '
+                <li class="nav-item" role="presentation">
+                <button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="harakteristiki-tab" data-bs-toggle="tab" data-bs-target="#harakteristiki" type="button" role="tab" aria-controls="harakteristiki" aria-selected="false">Характеристики</button>
+                </li>';
+        }
+
+	    if (!empty($this->htmleditor('<insert name="show_dynamic" module="site" id="3">'))) echo '
+            <li class="nav-item" role="presentation">
+            <button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="video-tab" data-bs-toggle="tab" data-bs-target="#video" type="button" role="tab" aria-controls="video" aria-selected="false">Видео</button>
+            </li>';
+		echo '
+        <li class="nav-item" role="presentation">
 		<button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="otzivi-tab" data-bs-toggle="tab" data-bs-target="#otzivi" type="button" role="tab" aria-controls="otzivi" aria-selected="false">Отзывы</button>
 		</li>
 		<li class="nav-item" role="presentation">
@@ -276,29 +296,43 @@ echo '<div class="shop-item-opis col-12 mt-5">';
 		</li>
 	</ul>';
 	echo '<div class="tab-content py-3" id="tovarIDtabContent">';
+
 		//Комплектующие
-		echo '<div class="tab-pane fade show active" id="complectuyushie" role="tabpanel" aria-labelledby="complectuyushie-tab">';
-		echo $this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" defer="emergence" defer_title="Комплектующие" template="relrows">');
-		echo '</div>';
+        if (!empty($this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" defer="emergence" defer_title="Комплектующие" template="relrows">'))) {
+            echo '<div class="tab-pane fade show active" id="complectuyushie" role="tabpanel" aria-labelledby="complectuyushie-tab">';
+            echo $this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" defer="emergence" defer_title="Комплектующие" template="relrows">');
+            echo '</div>';
+        }
+
 		//полное описание товара
-		echo '<div class="tab-pane fade" id="opisanie" role="tabpanel" aria-labelledby="opisanie-tab">'.$this->htmleditor($result['text']).'</div>';
+        if (!empty($this->htmleditor($result['text']))) {
+            echo '<div class="tab-pane fade" id="opisanie" role="tabpanel" aria-labelledby="opisanie-tab">' . $this->htmleditor($result['text']) . '</div>';
+        }
+
 		//Детали
-		echo '<div class="tab-pane fade" id="detali" role="tabpanel" aria-labelledby="detali-tab">';
-		echo '<div>'.$this->htmleditor('<insert name="show_dynamic" module="site" id="4">').'</div></div>';
-		
+        if (!empty($this->htmleditor('<insert name="show_dynamic" module="site" id="4">'))) {
+            echo '<div class="tab-pane fade" id="detali" role="tabpanel" aria-labelledby="detali-tab">';
+            echo '<div>' . $this->htmleditor('<insert name="show_dynamic" module="site" id="4">') . '</div></div>';
+        }
+
 		//Характеристики
-		echo '<div class="tab-pane fade" id="harakteristiki" role="tabpanel" aria-labelledby="harakteristiki-tab">';
-			if(! empty($result["param"]))
-			{
-				echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
-			}
-		echo '</div>';
+        if(! empty($result["param"])) {
+            echo '<div class="tab-pane fade" id="harakteristiki" role="tabpanel" aria-labelledby="harakteristiki-tab">';
+                echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
+            echo '</div>';
+        }
+
 		//Видео
-		echo '<div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab"><div class="rounded embed-responsive embed-responsive-16by9">'.$this->htmleditor('<insert name="show_dynamic" module="site" id="3">').'</div></div>';
+        if (!empty($this->htmleditor('<insert name="show_dynamic" module="site" id="3">')))
+		    echo '<div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab"><div class="rounded embed-responsive embed-responsive-16by9">'.$this->htmleditor('<insert name="show_dynamic" module="site" id="3">').'</div></div>';
+
 		//Отзывы <insert name="show" module="reviews">
-		echo '<div class="tab-pane fade" id="otzivi" role="tabpanel" aria-labelledby="otzivi-tab">'.$this->htmleditor('<insert name="show" module="reviews">').'</div>';
+        if (!empty(strip_tags($this->htmleditor('<insert name="show" module="reviews">'))))
+		    echo '<div class="tab-pane fade" id="otzivi" role="tabpanel" aria-labelledby="otzivi-tab">'.$this->htmleditor('<insert name="show" module="reviews">').'</div>';
+
 		//Вопросы по товару
 		echo '<div class="tab-pane fade" id="voprosi" role="tabpanel" aria-labelledby="voprosi-tab">...</div>';
+
 	echo '</div>';
 	
 echo '</div>';
