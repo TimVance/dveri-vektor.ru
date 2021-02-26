@@ -49,6 +49,6 @@ if(empty($result['rows'])) return false;
 		}
 		echo '</div>';
 	
-		echo '</div></div>';		
+		echo '</div>';
 	}
 	echo '</div>';

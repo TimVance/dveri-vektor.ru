@@ -975,3 +975,42 @@ details summary::-webkit-details-marker {
 @media (min-width: 577px) {
 
 }
+
+.js-param-depends-price label span {
+    display: inline-block;
+    padding: 2px 5px;
+    border: 1px solid #066cbe;
+    cursor: pointer;
+    margin: 0 5px 5px 0;
+    font-size: 14px;
+}
+.js-param-depends-price label input:checked + span {
+    background-color: #066cbe;
+    color: #fff;
+}
+.param-block {
+    margin-bottom: 20px;
+}
+.param-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #066cbe;
+}
+.js_shop_form_param {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.param-title span {
+    font-size: 15px;
+    background-color: #009846;
+    color: #fff;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+}
