@@ -263,10 +263,9 @@ function init_shop_buy_form() {
 
 // Работа с характеристиками влияющих на цену
 function insertDependParametres() {
-	let depend_params = $('.shop-item-right .js_shop_depend_param');
+	let depend_params = $('.shop-item-right select.js_shop_depend_param');
 	let wrapper = $('.js-param-depends-price');
 	let block = '';
-	wrapper.html('');
 	depend_params.each(function() {
 		let depend_param = $(this);
 		let depend_elements = depend_param.find("option");
@@ -291,7 +290,10 @@ function insertDependParametres() {
 			block += '<div class="param-block">' + labels + '</div>';
 		}
 	});
-	wrapper.append(block);
+	if (block != '') {
+		wrapper.html('');
+		wrapper.append(block);
+	}
 	$('[data-bs-toggle="tooltip"]').tooltip();
 }
 

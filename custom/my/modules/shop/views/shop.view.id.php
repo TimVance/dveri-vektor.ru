@@ -181,12 +181,26 @@ echo '<div class="shop-item-center col">';
 			echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
 		}
 
+
+		// Описания для подсказок характеристик
 		echo '<div style="display: none" class="js-text-params">';
 		foreach ($result["ids_param"] as $param) {
 		    if (!empty($param["text"])) echo '<span data-id="'.$param["id"].'">'.$param["text"].'</span>';
         }
 		echo '</div>';
-		echo '<div class="js-param-depends-price"></div>';
+
+		// Выводим характеристику, если она одна
+		echo '<div class="js-param-depends-price">';
+		    $count_params = count($result["param_multiple"]);
+		    foreach ($result["param_multiple"] as $parmult_id => $parmult) {
+                if (count($parmult) == 1 && $count_params == 1) {
+                    echo '<div class="param-block">';
+                        echo '<div class="param-title">'.$result["ids_param"][$parmult_id]["name"].' <span data-bs-toggle="tooltip" data-bs-placement="top" title="'.$result["ids_param"][$parmult_id]["text"].'">?</span> </div>';
+                        echo '<label><input type="radio" checked style="display: none"><span>'.$result["ids_param"][$parmult_id]["value"][0].'</span></label>';
+                    echo '</div>';
+                }
+            }
+		echo '</div>';
 
 /*		if(empty($result["hide_compare"]))
 		{
