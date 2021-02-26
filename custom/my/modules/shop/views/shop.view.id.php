@@ -195,7 +195,7 @@ echo '<div class="shop-item-center col">';
 		    foreach ($result["param_multiple"] as $parmult_id => $parmult) {
                 if (count($parmult) == 1 && $count_params == 1) {
                     echo '<div class="param-block">';
-                        echo '<div class="param-title">'.$result["ids_param"][$parmult_id]["name"].' <span data-bs-toggle="tooltip" data-bs-placement="top" title="'.$result["ids_param"][$parmult_id]["text"].'">?</span> </div>';
+                        echo '<div class="param-title">'.$result["ids_param"][$parmult_id]["name"].' <span '.(!empty($result["ids_param"][$parmult_id]["text"]) ? '' : 'style="display:none"').' data-bs-toggle="tooltip" data-bs-placement="top" title="'.$result["ids_param"][$parmult_id]["text"].'">?</span> </div>';
                         echo '<label><input type="radio" checked style="display: none"><span>'.$result["ids_param"][$parmult_id]["value"][0].'</span></label>';
                     echo '</div>';
                 }

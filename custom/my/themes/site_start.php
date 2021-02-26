@@ -72,16 +72,6 @@ $(document).ready(function(){
 });
 </script>
 
-<script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
-<!--набор текста в поиске -->
-<script>
-$('#textbox').typeIt({
-     strings: ["This is a great string.", "But here is a better one."],
-     speed: 50,
-     breakLines: false,
-     autoStart: false
-});
-</script>
 
 </body>
 </html>

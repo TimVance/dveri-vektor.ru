@@ -272,7 +272,9 @@ function insertDependParametres() {
 		if (depend_elements.length) {
 			let title = '';
 			title = $('.js-text-params span[data-id="' + depend_param.data("id") + '"]').text();
-			let labels = '<div class="param-title">' + depend_param.data('title') + '<span data-bs-toggle="tooltip" data-bs-placement="top" title="' + title + '">?</span></div>';
+			let tooltip = '';
+			if (title) tooltip = '<span data-bs-toggle="tooltip" data-bs-placement="top" title="' + title + '">?</span>';
+			let labels = '<div class="param-title">' + depend_param.data('title') + tooltip + '</div>';
 			depend_elements.each(function() {
 				let depend_element = $(this);
 				if (depend_element.css('display') !== 'none') {

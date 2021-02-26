@@ -122,7 +122,10 @@ echo '<script type="text/javascript">
 <script src="'.BASE_PATH.'custom/my/js/checkfiltr.js"></script>
 <script src="'.BASE_PATH.'custom/my/js/fixmenu.js"></script>
 <script src="'.BASE_PATH.'custom/my/js/thm.js"></script>
-<script src="'.BASE_PATH.'custom/my/js/totop.js"></script>';
+<script src="'.BASE_PATH.'custom/my/js/totop.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+<script src="'.BASE_PATH.'custom/my/js/custom.js"></script>
+';
 
 echo '<script type="text/javascript" src="'.BASE_PATH.File::compress(Custom::path('js/site.js'), 'js').'" charset="UTF-8"></script>';
 
