@@ -292,6 +292,7 @@ function insertDependParametres() {
 		}
 	});
 	wrapper.append(block);
+	$('[data-bs-toggle="tooltip"]').tooltip();
 }
 
 // Выбор характерист влияющих на цену
