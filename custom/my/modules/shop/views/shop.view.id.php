@@ -178,7 +178,7 @@ echo '<div class="shop-item-center col">';
 		//характеристики товара
 		if(! empty($result["param"]))
 		{
-			//echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
+			echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
 		}
 
 		echo '<div style="display: none" class="js-text-params">';
