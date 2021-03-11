@@ -177,6 +177,17 @@ class Shop_admin_group_clone extends Diafan
 				}
 				DB::query('INSERT INTO {shop_param_element} ('.implode(',', array_keys($row)).') VALUES ('.implode(',', $row).')');
 			}
+
+
+			// Клонирование
+            $rows_rel_result = DB::query_fetch_all("SELECT rel_element_id FROM {shop_rel} WHERE element_id=%d", $id);
+            $rows_rel = [];
+            if (!empty($rows_rel_result)) {
+                foreach ($rows_rel_result as $row_rel) {
+                    DB::query("INSERT INTO {shop_rel} (`element_id`, `rel_element_id`, `trash`) VALUES(%d, %d, '0')", $row["element_id"], $row_rel["rel_element_id"]);
+                }
+            }
+
 		}
 	}
 }
