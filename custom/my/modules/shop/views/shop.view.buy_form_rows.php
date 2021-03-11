@@ -67,7 +67,7 @@ if ($result["row"]["price_arr"])
 		{
 			$param_code .= ' image_id="'.$price["image_rel"].'"';
 		}
-		echo '<div class="js_shop_param_price shop_param_price shop-item-price col pr-1 text-center"'.$param_code.'>';
+		echo '<div class="js_shop_param_price shop_param_price shop-item-price col pr-1 text-center"'.$param_code.' price-id-js="'.$price["id"].'">';
 				if(! empty($price["old_price"]))
 				{
 				echo '<div class="shop_old_price price-old"><span class="red_polosa"><span class="shop_price_value strike">'.$price["old_price"].'<i class="fa fa-rub" aria-hidden="true"></i></span></span></div>';

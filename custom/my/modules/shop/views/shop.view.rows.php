@@ -24,7 +24,7 @@ echo '<div class="row shop_rows">';
 if(empty($result['rows'])) return false;
 
 foreach ($result['rows'] as $row)
-{		
+{
 	echo '<div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-3 mt-2"><div class="js_shop shop-item h-100">';
 
 	//вывод изображений товара
