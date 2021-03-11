@@ -39,6 +39,11 @@ echo '
 <input type="hidden" name="module" value="shop">
 <input type="hidden" name="action" value="'.$action.'">';
 
+//перенёс сюда
+echo '<div class="js_shop_buy shop_buy to-cart col mb-3 text-right">';
+	if (empty($result["row"]['is_file']) && empty($hide_submit))
+	{
+
 // у товара несколько цен
 if ($result["row"]["price_arr"])
 {
@@ -83,7 +88,7 @@ if ($result["row"]["price_arr"])
 		echo '</div>';
 	echo '</div>';
 
-	echo '<div>';
+	echo '<div class="d-inline-block ms-3">';
 	foreach ($result["row"]["price_arr"] as $price)
 	{
 		$param_code = '';
@@ -182,10 +187,8 @@ if(! empty($waitlist))
 	</div>';
 }
 
-echo '<div class="js_shop_buy shop_buy to-cart col mb-3 text-right">';
-	if (empty($result["row"]['is_file']) && empty($hide_submit))
-	{
-		echo '<div class="tovar_cena_block_colich">';
+//от сюда
+		echo '<div class="tovar_cena_block_colich d-inline-block float-end me-3 mt-1 mb-3">';
 		echo '<input type="text" value="1" name="count" class="number" pattern="[0-9]+([\.|,][0-9]+)?" step="any">';
 		echo '<div class="plus">+</div>';
 		echo '<div class="minus">-</div>';
@@ -194,17 +197,17 @@ echo '<div class="js_shop_buy shop_buy to-cart col mb-3 text-right">';
 		{
 			echo ' '.$result["row"]["measure_unit"].' ';
 		}
-	}
-	echo '<div class="tovar_id_text_only c_dgrey fs_12 fst-italic mb-3">
+}
+	echo '<div class="tovar_id_text_only c_dgrey fs_12 fst-italic fw-bold mb-3">
 	'.$this->htmleditor('<insert name="show_dynamic" module="site" id="2" template="bordtext">').'
 </div>';
 	if(empty($hide_submit))
 	{
-		echo '<input type="button" class="button px-3" value="'.$this->diafan->_('В корзину', false).'" action="buy">';
+		echo '<button type="reset" class="button text-nowrap out_none btn_buy" action="buy"><i class="fa fa-shopping-basket fs_18 py-1 pe-2" aria-hidden="true"></i>'.$this->diafan->_('В корзину').'</button>';
 	}
 
+echo '<span class="js_shop_wishlist shop_wishlist btn_bord position-relative align-bottom shop-like'.(! empty($result["wish"]) ? ' active' : '').'"><i class="fa fs_20 fa-star'.(! empty($result["wish"]) ? '' : '-o').'"></i>'.$this->diafan->_('Отложить').'</span>';
 
-echo '<span class="js_shop_wishlist shop_wishlist btn_bord shop-like'.(! empty($result["wish"]) ? ' active' : '').'"><i class="fa fa-heart'.(! empty($result["wish"]) ? '' : '-o').'">&nbsp;</i></span>';
 echo '</div>';
 if(empty($hide_submit) && ! empty($result["result"]["one_click"]))
 {

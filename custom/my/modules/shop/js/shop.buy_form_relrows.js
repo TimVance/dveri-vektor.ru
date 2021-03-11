@@ -11,25 +11,25 @@
 $(document).on('change', ".js_shop_depend_param, .shop_form .depend_param", function() {
 	select_param_price($(this).parents('form'), $(this).attr("name"));
 });
-$(document).on('click', ".btn_buy[action=buy]", function() {
+$(document).on('click', "#complectuyushie input[action=buy]", function() {
 	$(this).parents('form').find('input[name=action]').val('buy');
 	$(this).parents('form').submit();
 });
-$(document).on('click', "input[action=wish]", function() {
+$(document).on('click', "#complectuyushie input[action=wish]", function() {
 	$(this).parents('form').find('input[name=action]').val('wish');
 	$(this).parents('form').submit();
 });
-$(document).on('click', "input[action=wait]", function() {
+$(document).on('click', "#complectuyushie input[action=wait]", function() {
 	$(this).parents('form').find('input[name=action]').val('wait');
 	$(this).parents('form').submit();
 });
-$(document).on('click', "input[action=one_click]", function() {
+$(document).on('click', "#complectuyushie input[action=one_click]", function() {
 	$('form[one_click=true]').removeAttr('one_click');
 	$(this).parents('form').attr('one_click', 'true');
 	//$(this).parents('.js_shop').find('.js_cart_one_click, .cart_one_click').show();
 	$(this).parents('form').siblings('.js_cart_one_click, .cart_one_click').show();
 });
-$(document).on('click', ".js_cart_one_click_form :button, .cart_one_click_form :button", function(){
+$(document).on('click', "#complectuyushie .js_cart_one_click_form :button, #complectuyushie .cart_one_click_form :button", function(){
 	$(this).attr('disabled', 'disabled');
 	var self = $(this).parents(".js_cart_one_click_form, .cart_one_click_form");
 	$('.js_shop_form_param input, .js_shop_form_param select, .shop_form_param input, .shop_form_param select, input[name=count], .js_shop_additional_cost input[type="checkbox"]:checked', 'form[one_click=true]').each(function(){
@@ -47,7 +47,7 @@ diafan_ajax.success['cart_one_click'] = function(form, response) {
 	$('input:button', form).removeAttr('disabled');
 }
 
-$(document).on('click', '.js_shop_wishlist, .shop-like', function() {
+$(document).on('click', '#complectuyushie .js_shop_wishlist, #complectuyushie .shop-like', function() {
 	var form = $(this).parents('.js_shop, .shop').find('.js_shop_form, .shop_form').first();
 	form.find('input[name=action]').val('wish')
 	form.submit();

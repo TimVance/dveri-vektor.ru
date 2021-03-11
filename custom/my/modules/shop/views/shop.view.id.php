@@ -35,7 +35,7 @@ if(! empty($result["img"]))
 		switch ($img["type"])
 		{
 			case 'animation':
-				echo '<a class="js_shop_img shop-item-image'.(empty($k) ? ' active' : '').'" href="'.BASE_PATH.$img["link"].'" data-fancybox="gallery'.$result["id"].'shop" image_id="'.$img["id"].'">';
+				echo '<a class="js_shop_img shop-item-image'.(empty($k) ? ' active' : '').'" href="'.BASE_PATH.$img["link"].'" data-fancybox="gallery'.$result["id"].'shop" image_id="'.$img["id"].'" data-caption="'.$img["alt"].'">';
 				break;
 			case 'large_image':
 				echo '<a class="js_shop_img shop-item-image'.(empty($k) ? ' active' : '').'" href="'.BASE_PATH.$img["link"].'" rel="large_image" width="'.$img["link_width"].'" height="'.$img["link_height"].'" image_id="'.$img["id"].'">';
@@ -69,33 +69,105 @@ if(! empty($result["img"]))
 					}
 				if(! empty($result["ids_param"][38]))
 					{
-						echo '<span class="label__save2 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 2 года">'; 
-						echo $result["ids_param"][38]["value"];
-						echo'</span>';
+						echo '<span class="label__save2 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 2 года"><span class="d-none">'; 
+						echo $result["ids_param"][38]["name"];
+						echo'</span></span>';
 					}
 				if(! empty($result["ids_param"][39]))
 					{
-						echo '<span class="label__save3 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 3 года">'; 
-						echo $result["ids_param"][39]["value"];
-						echo'</span>';
+						echo '<span class="label__save3 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 3 года"><span class="d-none">'; 
+						echo $result["ids_param"][39]["name"];
+						echo'</span></span>';
 					}
 				if(! empty($result["ids_param"][40]))
 					{
-						echo '<span class="label__save5 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 5 лет">'; 
-						echo $result["ids_param"][40]["value"];
-						echo'</span>';
+						echo '<span class="label__save5 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 5 лет"><span class="d-none">'; 
+						echo $result["ids_param"][40]["name"];
+						echo'</span></span>';
 					}
 				if(! empty($result["ids_param"][41]))
 					{
-						echo '<span class="label__save10 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 10 лет">'; 
-						echo $result["ids_param"][41]["value"];
-						echo'</span>';
+						echo '<span class="label__save10 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 10 лет"><span class="d-none">'; 
+						echo $result["ids_param"][41]["name"];
+						echo'</span></span>';
 					}
 				if(! empty($result["ids_param"][37]))
 					{
-						echo '<span class="label__palit mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Расширенная цветовая палитра">'; 
-						echo $result["ids_param"][37]["value"];
-						echo'</span>';
+						echo '<span class="label__palit mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Расширенная цветовая палитра"><span class="d-none">'; 
+						echo $result["ids_param"][37]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][27]))
+					{
+						echo '<span class="label__mont2 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантия на монтаж 2 года "><span class="d-none">'; 
+						echo $result["ids_param"][27]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][30]))
+					{
+						echo '<span class="label__montfree mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Монтаж в подарок"><span class="d-none">'; 
+						echo $result["ids_param"][30]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][31]))
+					{
+						echo '<span class="label__montsale mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Монтаж со скидкой"><span class="d-none">'; 
+						echo $result["ids_param"][31]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][26]))
+					{
+						echo '<span class="label__money mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Доступно в рассрочку"><span class="d-none">'; 
+						echo $result["ids_param"][26]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][32]))
+					{
+						echo '<span class="label__termo mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Терморазрыв"><span class="d-none">'; 
+						echo $result["ids_param"][32]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][36]))
+					{
+						echo '<span class="label__proch mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Высокопрочное покрытие"><span class="d-none">'; 
+						echo $result["ids_param"][36]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][34]))
+					{
+						echo '<span class="label__obrazec mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Образец в выставочном зале"><span class="d-none">'; 
+						echo $result["ids_param"][34]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][25]))
+					{
+						echo '<span class="label__vo mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Рекомендуем"><span class="d-none">'; 
+						echo $result["ids_param"][25]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][35]))
+					{
+						echo '<span class="label__water mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Влагостойкое покрытие"><span class="d-none">'; 
+						echo $result["ids_param"][35]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][28]))
+					{
+						echo '<span class="label__present mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Подарок при покупке"><span class="d-none">'; 
+						echo $result["ids_param"][28]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][29]))
+					{
+						echo '<span class="label__delivfree mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Бесплатная доставка"><span class="d-none">'; 
+						echo $result["ids_param"][29]["name"];
+						echo'</span></span>';
+					}
+					if(! empty($result["ids_param"][33]))
+					{
+						echo '<span class="label__sound mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Повышенная шумоизоляция"><span class="d-none">'; 
+						echo $result["ids_param"][33]["name"];
+						echo'</span></span>';
 					}	
 					
 			echo '</span>';
@@ -116,7 +188,7 @@ if(! empty($result["img"]))
 		echo '</div>';
 	}
 }
-echo '<div class="tovar_id_text_all fs_12 fst-italic px-3 py-2 mb-3 c_lgrey">'.$this->htmleditor('<insert name="show_block" module="site" id="5">').'</div>';
+echo '<div class="tovar_id_text_all fs_12 fst-italic mb-3 c_dgrey fw-bold px-2 py-1 lh-1_2">'.$this->htmleditor('<insert name="show_block" module="site" id="5">').'</div>';
 echo '<div class="tovar_id_share text-center"><p>'.$this->diafan->_("Поделиться в соцсетях").'</p>'.$this->htmleditor('<insert name="show_block" module="site" id="6">').'</div>';
 
 echo '</div>';
@@ -194,8 +266,8 @@ echo '<div class="shop-item-center col">';
 		    $count_params = count($result["param_multiple"]);
 		    foreach ($result["param_multiple"] as $parmult_id => $parmult) {
                 if (count($parmult) == 1 && $count_params == 1) {
-                    echo '<div class="param-block">';
-                        echo '<div class="param-title">'.$result["ids_param"][$parmult_id]["name"].' <span '.(!empty($result["ids_param"][$parmult_id]["text"]) ? '' : 'style="display:none"').' data-bs-toggle="tooltip" data-bs-placement="top" title="'.$result["ids_param"][$parmult_id]["text"].'">?</span> </div>';
+                    echo '<div class="param-block mb-3">';
+                        echo '<div class="param-title fw-bold c_dblue mb-2">'.$result["ids_param"][$parmult_id]["name"].' <span '.(!empty($result["ids_param"][$parmult_id]["text"]) ? '' : 'style="display:none"').' data-bs-toggle="tooltip" data-bs-placement="top" title="'.$result["ids_param"][$parmult_id]["text"].'" class="b_green c_white cursor_pointer d-inline-block fw-bold ms-1 rounded-circle text-center">?</span> </div>';
                         echo '<label><input type="radio" checked style="display: none"><span>'.$result["ids_param"][$parmult_id]["value"][0].'</span></label>';
                     echo '</div>';
                 }
@@ -255,10 +327,10 @@ echo '<div class="shop-item-right col-lg-3 col">';
 	//кнопка "Купить"
 	echo $this->get('buy_form', 'shop', array("row" => $result, "result" => $result));
 	
-//	echo '<span class="js_shop_wishlist shop_wishlist btn_bord shop-like'.(! empty($result["wish"]) ? ' active' : '').'"><i class="fa fa-heart'.(! empty($result["wish"]) ? '' : '-o').'">&nbsp;</i></span>';
+	//echo '<span class="js_shop_wishlist shop_wishlist btn_bord shop-like'.(! empty($result["wish"]) ? ' active' : '').'"><i class="fa fa-heart'.(! empty($result["wish"]) ? '' : '-o').'">&nbsp;</i></span>';
 
 	echo '<div class="shop-item-info2">
-		
+	<div class="tovar_id_stock mt-3">'.$this->htmleditor('<insert name="show_dynamic" module="site" id="5">').'</div>
 	</div>';
 
 echo '</div>';
@@ -268,18 +340,18 @@ echo '<div class="shop-item-opis col-12 mt-5">';
 //	echo '<div class="shop_text mt-5 mb-3">'.$this->htmleditor($result['text']).'</div>';
 	echo '<ul class="nav nav-tabs justify-content-start justify-content-lg-between py-0" id="tovarIDtab" role="tablist">';
 
-        if (!empty($this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">'))) {
-            echo '
-            <li class="nav-item" role="presentation">
-            <button class="nav-link fs_18 border-0 b_none c_llblue out_none active" id="complectuyushie-tab" data-bs-toggle="tab" data-bs-target="#complectuyushie" type="button" role="tab" aria-controls="complectuyushie" aria-selected="true">Комплектующие</button>
-            </li>';
-        }
-
         if (!empty($this->htmleditor($result['text']))) {
             echo '
                 <li class="nav-item" role="presentation">
-                <button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="opisanie-tab" data-bs-toggle="tab" data-bs-target="#opisanie" type="button" role="tab" aria-controls="opisanie" aria-selected="false">Описание</button>
+                <button class="nav-link fs_18 border-0 b_none c_llblue out_none active" id="opisanie-tab" data-bs-toggle="tab" data-bs-target="#opisanie" type="button" role="tab" aria-controls="opisanie" aria-selected="false">Описание</button>
                 </li>';
+        }
+
+        if (!empty($this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">'))) {
+            echo '
+            <li class="nav-item" role="presentation">
+            <button class="nav-link fs_18 border-0 b_none c_llblue out_none" id="complectuyushie-tab" data-bs-toggle="tab" data-bs-target="#complectuyushie" type="button" role="tab" aria-controls="complectuyushie" aria-selected="true">Комплектующие</button>
+            </li>';
         }
 
 	    if (!empty($this->htmleditor('<insert name="show_dynamic" module="site" id="4">'))) {
@@ -311,16 +383,16 @@ echo '<div class="shop-item-opis col-12 mt-5">';
 	</ul>';
 	echo '<div class="tab-content py-3" id="tovarIDtabContent">';
 
-		//Комплектующие
-        if (!empty($this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">'))) {
-            echo '<div class="tab-pane fade show active" id="complectuyushie" role="tabpanel" aria-labelledby="complectuyushie-tab">';
-            echo $this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">');
-            echo '</div>';
-        }
-
 		//полное описание товара
         if (!empty($this->htmleditor($result['text']))) {
-            echo '<div class="tab-pane fade" id="opisanie" role="tabpanel" aria-labelledby="opisanie-tab">' . $this->htmleditor($result['text']) . '</div>';
+            echo '<div class="tab-pane fade show active" id="opisanie" role="tabpanel" aria-labelledby="opisanie-tab">' . $this->htmleditor($result['text']) . '</div>';
+        }
+
+		//Комплектующие
+        if (!empty($this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">'))) {
+            echo '<div class="tab-pane fade" id="complectuyushie" role="tabpanel" aria-labelledby="complectuyushie-tab">';
+            echo $this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">');
+            echo '</div>';
         }
 
 		//Детали
@@ -345,7 +417,12 @@ echo '<div class="shop-item-opis col-12 mt-5">';
 		    echo '<div class="tab-pane fade" id="otzivi" role="tabpanel" aria-labelledby="otzivi-tab">'.$this->htmleditor('<insert name="show" module="reviews">').'</div>';
 
 		//Вопросы по товару
-		echo '<div class="tab-pane fade" id="voprosi" role="tabpanel" aria-labelledby="voprosi-tab">...</div>';
+		echo '<div class="tab-pane fade" id="voprosi" role="tabpanel" aria-labelledby="voprosi-tab">';
+			if (!empty($result["comments"]))
+			{
+				echo $result["comments"];
+			}
+		echo '</div>';
 
 	echo '</div>';
 	

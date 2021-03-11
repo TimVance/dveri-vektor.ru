@@ -11,19 +11,19 @@
 $(document).on('change', ".js_shop_depend_param, .shop_form .depend_param", function() {
 	select_param_price($(this).parents('form'), $(this).attr("name"));
 });
-$(document).on('click', "input[action=buy]", function() {
+$(document).on('click', ".btn_buy[action=buy]", function() {
 	$(this).parents('form').find('input[name=action]').val('buy');
 	$(this).parents('form').submit();
 });
-$(document).on('click', "input[action=wish]", function() {
+$(document).on('click', ".shop-item-right input[action=wish]", function() {
 	$(this).parents('form').find('input[name=action]').val('wish');
 	$(this).parents('form').submit();
 });
-$(document).on('click', "input[action=wait]", function() {
+$(document).on('click', ".shop-item-right input[action=wait]", function() {
 	$(this).parents('form').find('input[name=action]').val('wait');
 	$(this).parents('form').submit();
 });
-$(document).on('click', "input[action=one_click]", function() {
+$(document).on('click', ".shop-item-right input[action=one_click]", function() {
 	$('form[one_click=true]').removeAttr('one_click');
 	$(this).parents('form').attr('one_click', 'true');
 	//$(this).parents('.js_shop').find('.js_cart_one_click, .cart_one_click').show();
@@ -47,9 +47,9 @@ diafan_ajax.success['cart_one_click'] = function(form, response) {
 	$('input:button', form).removeAttr('disabled');
 }
 
-$(document).on('click', '.js_shop_wishlist, .shop-like', function() {
+$(document).on('click', '.shop-item-right .js_shop_wishlist, .shop-item-right .shop-like', function() {
 	var form = $(this).parents('.js_shop, .shop').find('.js_shop_form, .shop_form').first();
-	form.find('input[name=action]').val('wish')
+	form.find('input[name=action]').val('wish');
 	form.submit();
 });
 
@@ -273,8 +273,8 @@ function insertDependParametres() {
 			let title = '';
 			title = $('.js-text-params span[data-id="' + depend_param.data("id") + '"]').text();
 			let tooltip = '';
-			if (title) tooltip = '<span data-bs-toggle="tooltip" data-bs-placement="top" title="' + title + '">?</span>';
-			let labels = '<div class="param-title">' + depend_param.data('title') + tooltip + '</div>';
+			if (title) tooltip = '<span data-bs-toggle="tooltip" data-bs-placement="top" title="' + title + '" class="b_green c_white cursor_pointer d-inline-block fw-bold ms-1 rounded-circle text-center">?</span>';
+			let labels = '<div class="param-title fw-bold c_dblue mb-2">' + depend_param.data('title') + tooltip + '</div>';
 			depend_elements.each(function() {
 				let depend_element = $(this);
 				if (depend_element.css('display') !== 'none') {
@@ -289,7 +289,7 @@ function insertDependParametres() {
 						'</label>';
 				}
 			});
-			block += '<div class="param-block">' + labels + '</div>';
+			block += '<div class="param-block mb-3">' + labels + '</div>';
 		}
 	});
 	if (block != '') {
