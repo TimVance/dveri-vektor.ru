@@ -1945,7 +1945,7 @@ class Shop_model extends Model
 			.($this->diafan->configmodules('where_access_element', 'shop') ? " AND (e.access='0' OR e.access='1' AND a.role_id=".$this->diafan->_users->role_id.")" : '')
 			.($this->diafan->configmodules('hide_missing_goods', 'shop') ? " AND e.no_buy='0'" : "")
 			." GROUP BY e.id"
-			." ORDER BY e.id DESC",
+			." ORDER BY r.id ASC",
 			$this->diafan->_route->show, 0, $count
 			);
 			$this->elements($this->result["rows"], 'block', array("count" => $images, "variation" => $images_variation));

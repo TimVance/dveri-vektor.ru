@@ -26,6 +26,7 @@ if (! defined('DIAFAN'))
 	include $path.'/includes/404.php';
 }
 
+
 if(empty($result['rows'])) return false;
 
 	echo '<div class="row shop_rows">';
