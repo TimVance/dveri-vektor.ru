@@ -21,6 +21,13 @@ if (! defined('DIAFAN'))
 	include $path.'/includes/404.php';
 }
 
+// Делаем редирект, если в названии категории есть слово "Комплектующие"
+$block_word = 'Комплектующие';
+$bread_size = count($result["breadcrumb"]) - 1;
+$haystack = $result["breadcrumb"][$bread_size]["name"];
+if (strpos($haystack, $block_word) !== false) {
+    header('Location: https://dveri-vektor.ru/404');
+}
 
 
 echo '<div class="js_shop_id js_shop shop_id shop-item-container odin_tovar row">';
