@@ -524,6 +524,7 @@ class Shop_model extends Model
 		"SELECT COUNT(DISTINCT c.id) FROM {shop_category} AS c"
 		.($this->diafan->configmodules('where_access_cat') ? " LEFT JOIN {access} AS a ON a.element_id=c.id AND a.module_name='shop' AND a.element_type='cat'" : "")
 		." WHERE c.[act]='1' AND c.parent_id=0 AND c.trash='0' AND c.site_id=%d"
+        ." AND c.[name] NOT LIKE '%Комплектующие%'"
 		.($this->diafan->configmodules('where_access_cat') ? " AND (c.access='0' OR c.access='1' AND a.role_id=".$this->diafan->_users->role_id.")" : ''), $this->diafan->_site->id
 		);
 		return $count;
@@ -540,6 +541,7 @@ class Shop_model extends Model
 		"SELECT c.id, c.[name], c.[anons], c.timeedit, c.site_id FROM {shop_category} AS c"
 		.($this->diafan->configmodules('where_access_cat') ? " LEFT JOIN {access} AS a ON a.element_id=c.id AND a.module_name='shop' AND a.element_type='cat'" : "")
 		." WHERE c.[act]='1' AND c.parent_id=0 AND c.trash='0' AND c.site_id=%d"
+        ." AND c.[name] NOT LIKE '%Комплектующие%'"
 		.($this->diafan->configmodules('where_access_cat') ? " AND (c.access='0' OR c.access='1' AND a.role_id=".$this->diafan->_users->role_id.")" : '')
 		." GROUP BY c.id ORDER by c.sort ASC, c.id ASC", $this->diafan->_site->id,
 		$this->diafan->_paginator->polog, $this->diafan->_paginator->nastr
