@@ -2379,9 +2379,10 @@ class Shop_model extends Model
 	 */
 	public function search($element_ids)
 	{
-		$rows = DB::query_fetch_key("SELECT e.id, e.[name], e.[anons], e.timeedit, e.site_id, e.brand_id, e.no_buy, e.article,"
+		$rows = DB::query_fetch_key("SELECT e.id, e.[name], e.[anons], e.timeedit, ct.[name] AS catname, e.site_id, e.cat_id, e.brand_id, e.no_buy, e.article,"
 		." e.[measure_unit], e.hit, e.new, e.action, e.is_file FROM {shop} AS e"
-		. " WHERE e.[act]='1' AND e.trash='0' AND e.id IN (%s)", implode(',', $element_ids), "id");
+        ." JOIN {shop_category} AS ct ON ct.id=e.cat_id"
+		." WHERE e.[act]='1' AND e.trash='0' AND ct.[name] NOT LIKE '%Комплектующие%' AND e.id IN (%s)", implode(',', $element_ids), "id");
 		foreach($element_ids as $id)
 		{
 			$this->result["rows"][] = $rows[$id];
