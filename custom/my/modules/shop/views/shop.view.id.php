@@ -28,6 +28,8 @@ $haystack = $result["breadcrumb"][$bread_size]["name"];
 if (strpos($haystack, $block_word) !== false) {
     header('Location: https://dveri-vektor.ru/404');
 }
+// Делаем редирект, если в названии категории есть слово "Комплектующие"
+
 
 
 echo '<div class="js_shop_id js_shop shop_id shop-item-container odin_tovar row">';
