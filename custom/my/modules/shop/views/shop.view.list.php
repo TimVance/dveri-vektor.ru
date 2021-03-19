@@ -27,6 +27,14 @@ if(! empty($result["error"]))
 	return;
 }
 
+// Делаем редирект, если в названии категории есть слово "Комплектующие"
+$block_word = 'Комплектующие';
+$haystack = $result["name"];
+if (strpos($haystack, $block_word) !== false) {
+    header('Location: https://dveri-vektor.ru/404');
+}
+// Делаем редирект, если в названии категории есть слово "Комплектующие"
+
 if(empty($result["ajax"]))
 {
 	echo '<div class="js_shop_list">';
