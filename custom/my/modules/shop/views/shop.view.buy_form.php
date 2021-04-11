@@ -40,7 +40,7 @@ echo '
 <input type="hidden" name="action" value="'.$action.'">';
 
 //перенёс сюда
-echo '<div class="js_shop_buy shop_buy to-cart col mb-3 text-right">';
+echo '<div class="js_shop_buy shop_buy to-cart col text-right">';
 	if (empty($result["row"]['is_file']) && empty($hide_submit))
 	{
 
@@ -57,7 +57,7 @@ if ($result["row"]["price_arr"])
 				{
 					foreach ($result["row"]["param_multiple"][$param["id"]] as $value => $depend)
 					{
-						echo '<input type="hidden" name="param'.$param["id"].'" value="'.$value.'"'.($depend == 'depend' ? ' class="depend_param js_shop_depend_param"' : '').'>';
+						echo '<input data-id="'.$param["id"].'" data-title="'.$param["name"].'" data-value="'.$result["result"]["ids_param"][$param["id"]]["value"][0].'" type="hidden" name="param'.$param["id"].'" value="'.$value.'"'.($depend == 'depend' ? ' class="depend_param js_shop_depend_param"' : '').'>';
 					}
 				}
 				else
@@ -198,7 +198,7 @@ if(! empty($waitlist))
 			echo ' '.$result["row"]["measure_unit"].' ';
 		}
 }
-	echo '<div class="tovar_id_text_only c_dgrey fs_12 fst-italic fw-bold mb-3">
+	echo '<div class="tovar_id_text_only c_dgrey fs_12 fst-italic fw-bold mb-3 mt-2">
 	'.$this->htmleditor('<insert name="show_dynamic" module="site" id="2" template="bordtext">').'
 </div>';
 	if(empty($hide_submit))
@@ -206,8 +206,9 @@ if(! empty($waitlist))
 		echo '<button type="reset" class="button text-nowrap out_none btn_buy" action="buy"><i class="fa fa-shopping-basket fs_18 py-1 pe-2" aria-hidden="true"></i>'.$this->diafan->_('В корзину').'</button>';
 	}
 
-echo '<span class="js_shop_wishlist shop_wishlist btn_bord position-relative align-bottom shop-like'.(! empty($result["wish"]) ? ' active' : '').'"><i class="fa fs_20 fa-star'.(! empty($result["wish"]) ? '' : '-o').'"></i>'.$this->diafan->_('Отложить').'</span>';
+echo '<span class="js_shop_wishlist shop_wishlist btn_bord position-relative align-bottom shop-like'.(! empty($result["wish"]) ? ' active' : '').'"><i class="fa fs_20 align-middle me-2 fa-star'.(! empty($result["wish"]) ? '' : '-o').'"></i>'.$this->diafan->_('Отложить').'</span>';
 
+echo '<div class="text-center mt-3"><div class="d-inline cursor_pointer td-punktir c_grey" data-bs-toggle="modal" data-bs-target="#saleModal">'.$this->diafan->_('Нашли дешевле?').'</div></div>';
 echo '</div>';
 if(empty($hide_submit) && ! empty($result["result"]["one_click"]))
 {

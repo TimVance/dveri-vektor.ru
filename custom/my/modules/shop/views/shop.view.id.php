@@ -56,132 +56,135 @@ if(! empty($result["img"]))
 				break;
 		}
 		echo '<img src="'.BASE_PATH.$img["link"].'" alt="'.$img["alt"].'" title="'.$img["title"].'" image_id="'.$img["id"].'" class="w-100 rounded shop_id_img">';
-			echo '<span class="shop-photo-labels position-absolute">';
-				if(! empty($result['hit']))
-				{
-					echo '<div class="mini_label ml_hit" data-bs-toggle="tooltip" data-bs-placement="top" title="Хит">';
-					echo '</div>';
-				}					
-				if(! empty($result['new']))
-				{
-					echo '<div class="mini_label ml_new" data-bs-toggle="tooltip" data-bs-placement="top" title="Новинка">';
-					echo '</div>';					
-				}
-				if(! empty($result['action']))
-				{
-					echo '<div class="mini_label ml_act" data-bs-toggle="tooltip" data-bs-placement="top" title="Акция">';
-					echo '</div>';
-				}
-				if(! empty($result["ids_param"][42]))
-					{
-						echo '<span class="label_sale mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Скидка"><span>'; 
-						echo $result["ids_param"][42]["value"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][25]))
-					{
-						echo '<span class="label__vo mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Рекомендуем"><span class="d-none">'; 
-						echo $result["ids_param"][25]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][34]))
-					{
-						echo '<span class="label__obrazec mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Образец в выставочном зале"><span class="d-none">'; 
-						echo $result["ids_param"][34]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][28]))
-					{
-						echo '<span class="label__present mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Подарок при покупке"><span class="d-none">'; 
-						echo $result["ids_param"][28]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][29]))
-					{
-						echo '<span class="label__delivfree mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Бесплатная доставка"><span class="d-none">'; 
-						echo $result["ids_param"][29]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][26]))
-					{
-						echo '<span class="label__money mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Доступно в рассрочку"><span class="d-none">'; 
-						echo $result["ids_param"][26]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][27]))
-					{
-						echo '<span class="label__mont2 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантия на монтаж 2 года "><span class="d-none">'; 
-						echo $result["ids_param"][27]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][30]))
-					{
-						echo '<span class="label__montfree mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Монтаж в подарок"><span class="d-none">'; 
-						echo $result["ids_param"][30]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][31]))
-					{
-						echo '<span class="label__montsale mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Монтаж со скидкой"><span class="d-none">'; 
-						echo $result["ids_param"][31]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][33]))
-					{
-						echo '<span class="label__sound mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Повышенная шумоизоляция"><span class="d-none">'; 
-						echo $result["ids_param"][33]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][35]))
-					{
-						echo '<span class="label__water mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Влагостойкое покрытие"><span class="d-none">'; 
-						echo $result["ids_param"][35]["name"];
-						echo'</span></span>';
-					}	
-					if(! empty($result["ids_param"][36]))
-					{
-						echo '<span class="label__proch mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Высокопрочное покрытие"><span class="d-none">'; 
-						echo $result["ids_param"][36]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][32]))
-					{
-						echo '<span class="label__termo mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Терморазрыв"><span class="d-none">'; 
-						echo $result["ids_param"][32]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][37]))
-					{
-						echo '<span class="label__palit mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Расширенная цветовая палитра"><span class="d-none">'; 
-						echo $result["ids_param"][37]["name"];
-						echo'</span></span>';
-					}
-				if(! empty($result["ids_param"][38]))
-					{
-						echo '<span class="label__save2 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 2 года"><span class="d-none">'; 
-						echo $result["ids_param"][38]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][39]))
-					{
-						echo '<span class="label__save3 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 3 года"><span class="d-none">'; 
-						echo $result["ids_param"][39]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][40]))
-					{
-						echo '<span class="label__save5 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 5 лет"><span class="d-none">'; 
-						echo $result["ids_param"][40]["name"];
-						echo'</span></span>';
-					}
-					if(! empty($result["ids_param"][41]))
-					{
-						echo '<span class="label__save10 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 10 лет"><span class="d-none">'; 
-						echo $result["ids_param"][41]["name"];
-						echo'</span></span>';
-					}
-					
-			echo '</span>';
+		echo '<div class="position-absolute shop-photo-labels text-right">';
+			if(! empty($result['hit']))
+			{
+				echo '<div class="mini_label ml_hit" data-bs-toggle="tooltip" data-bs-placement="top" title="Хит">';
+				echo '</div>';
+			}					
+			if(! empty($result['new']))
+			{
+				echo '<div class="mini_label ml_new" data-bs-toggle="tooltip" data-bs-placement="top" title="Новинка">';
+				echo '</div>';					
+			}
+			if(! empty($result['action']))
+			{
+				echo '<div class="mini_label ml_act" data-bs-toggle="tooltip" data-bs-placement="top" title="Акция">';
+				echo '</div>';
+			}
+			if(! empty($result["ids_param"][42]))
+			{
+				echo '<span class="label_sale mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Скидка"><span>'; 
+				echo $result["ids_param"][42]["value"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][29]))
+			{
+				echo '<span class="label__delivfree mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Бесплатная доставка"><span class="d-none">'; 
+				echo $result["ids_param"][29]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][28]))
+			{
+				echo '<span class="label__present mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Подарок при покупке"><span class="d-none">'; 
+				echo $result["ids_param"][28]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][30]))
+			{
+				echo '<span class="label__montfree mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Монтаж в подарок"><span class="d-none">'; 
+				echo $result["ids_param"][30]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][31]))
+			{
+				echo '<span class="label__montsale mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Монтаж со скидкой"><span class="d-none">'; 
+				echo $result["ids_param"][31]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][26]))
+			{
+				echo '<span class="label__money mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Доступно в рассрочку"><span class="d-none">'; 
+				echo $result["ids_param"][26]["name"];
+				echo'</span></span>';
+			}
+		echo '</div>';
+
+		echo '<div class="position-absolute shop-photo-labels spl-right text-right">';
+			if(! empty($result["ids_param"][25]))
+			{
+				echo '<span class="label__vo mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Рекомендуем"><span class="d-none">'; 
+				echo $result["ids_param"][25]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][34]))
+			{
+				echo '<span class="label__obrazec mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Образец в выставочном зале"><span class="d-none">'; 
+				echo $result["ids_param"][34]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][27]))
+			{
+				echo '<span class="label__mont2 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантия на монтаж 2 года "><span class="d-none">'; 
+				echo $result["ids_param"][27]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][32]))
+			{
+				echo '<span class="label__termo mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Терморазрыв"><span class="d-none">'; 
+				echo $result["ids_param"][32]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][33]))
+			{
+				echo '<span class="label__sound mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Повышенная шумоизоляция"><span class="d-none">'; 
+				echo $result["ids_param"][33]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][35]))
+			{
+				echo '<span class="label__water mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Влагостойкое покрытие"><span class="d-none">'; 
+				echo $result["ids_param"][35]["name"];
+				echo'</span></span>';
+			}	
+			if(! empty($result["ids_param"][36]))
+			{
+				echo '<span class="label__proch mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Высокопрочное покрытие"><span class="d-none">'; 
+				echo $result["ids_param"][36]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][37]))
+			{
+				echo '<span class="label__palit mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Расширенная цветовая палитра"><span class="d-none">'; 
+				echo $result["ids_param"][37]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][38]))
+			{
+				echo '<span class="label__save2 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 2 года"><span class="d-none">'; 
+				echo $result["ids_param"][38]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][39]))
+			{
+				echo '<span class="label__save3 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 3 года"><span class="d-none">'; 
+				echo $result["ids_param"][39]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][40]))
+			{
+				echo '<span class="label__save5 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 5 лет"><span class="d-none">'; 
+				echo $result["ids_param"][40]["name"];
+				echo'</span></span>';
+			}
+			if(! empty($result["ids_param"][41]))
+			{
+				echo '<span class="label__save10 mini_label" data-bs-toggle="tooltip" data-bs-placement="top" title="Гарантийный срок 10 лет"><span class="d-none">'; 
+				echo $result["ids_param"][41]["name"];
+				echo'</span></span>';
+			}
+
+		echo '</div>';
 		echo '</a>';
 		$k++;
 	}
@@ -189,9 +192,9 @@ if(! empty($result["img"]))
 	echo '</div>';
 	if($result["preview_images"])
 	{
-/*		echo '<a class="control-prev shop-previews-control" href="#"><i class="fa fa-toggle-left"></i></a>
-	          <a class="control-next shop-previews-control" href="#"><i class="fa fa-toggle-right"></i></a>';
-*/		echo '<div class="shop_preview_img shop-item-previews items-scroller justify-content-center row my-4" data-item-per-screen="3" data-controls="shop-previews-control">';
+		echo '<div class="position-relative"><a class="control-prev shop-previews-control" href="#"><i class="fa fa-toggle-left"></i></a>
+	          <a class="control-next shop-previews-control" href="#"><i class="fa fa-toggle-right"></i></a></div>';
+		echo '<div class="shop_preview_img shop-item-previews items-scroller justify-content-center my-4" data-item-per-screen="1" data-controls="shop-previews-control">';
 		foreach($result["img"] as $img)
 		{
 			echo ' <a class="js_shop_preview_img item mx-2" href="#" style="background-image:url('.$img["preview"].')" image_id="'.$img["id"].'">&nbsp;</a>';
@@ -258,10 +261,11 @@ echo '<div class="shop-item-center col">';
 		}
 */
 
+
 		//характеристики товара
 		if(! empty($result["param"]))
 		{
-			echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
+			echo $this->get('topparam', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
 		}
 
 
@@ -284,6 +288,84 @@ echo '<div class="shop-item-center col">';
                 }
             }
 		echo '</div>';
+
+		//характеристики товара (Системы открывания)
+		echo '<div class="mb-1 c_dblue fw-bold fs-6 text-uppercase mt-3 pt-1">';
+		if(! empty($result["ids_param"][79]))
+		{
+			echo $result["ids_param"][79]["name"];
+		}
+		echo '</div>';
+
+		if(! empty($result["ids_param"][80]))
+		{
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="11">').'</div>';
+		}
+		if(! empty($result["ids_param"][81]))
+		{
+			echo $result["ids_param"][81]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][82]))
+		{
+			echo $result["ids_param"][82]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][83]))
+		{
+			echo $result["ids_param"][83]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][84]))
+		{
+			echo $result["ids_param"][84]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][90]))
+		{
+			echo $result["ids_param"][90]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][91]))
+		{
+			echo $result["ids_param"][91]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][88]))
+		{
+			echo $result["ids_param"][88]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][85]))
+		{
+			echo $result["ids_param"][85]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][86]))
+		{
+			echo $result["ids_param"][86]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][87]))
+		{
+			echo $result["ids_param"][87]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][92]))
+		{
+			echo $result["ids_param"][92]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][93]))
+		{
+			echo $result["ids_param"][93]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
+		if(! empty($result["ids_param"][94]))
+		{
+			echo $result["ids_param"][94]["name"];
+			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+		}
 
 /*		if(empty($result["hide_compare"]))
 		{
@@ -359,30 +441,34 @@ echo '<div class="shop-item-right col-lg-3 col">';
 		echo '</div>';
 
 		//блок Есть вопросы?
-		echo '<div class="tovar_id_question mt-3">'.$this->htmleditor('<insert name="show_dynamic" module="site" id="7">').'</div>';
+		echo '<div class="tovar_id_question mt-3">'.$this->htmleditor('<insert name="show_block" module="site" id="8">').'</div>';
 
 		//статьи товара
 		echo '<div class="tovar_id_clauses mt-3">';
-			//статьи Входные двери
+			//статьи о входных дверях в квартиру
 			if(! empty($result["ids_param"][76]))
 			{
-				echo '<span>'; 
-				echo '<div class="col">'.$this->htmleditor('<insert name="show_block" module="clauses" count="4" cat_id="1" template="tovarid">').'</div>';
-				echo'</span>';
+				echo '<a href="https://dveri-vektor.ru/clauses/stati-o-vkhodnykh-dveryakh-v-kvatriru" target="_blank">'.$this->diafan->_('Статьи о входных дверях в квартиру').'</a>';
+			}
+			//статьи о входных дверях в частный дом
+			if(! empty($result["ids_param"][89]))
+			{
+				echo '<a href="https://dveri-vektor.ru/clauses/stati-o-vkhodnykh-dveryakh-v-chastnyy-dom" target="_blank">'.$this->diafan->_('Статьи о входных дверях в частный дом').'</a>';
 			}
 			//Статьи о межкомнатных дверях
 			if(! empty($result["ids_param"][74]))
 			{
-				echo '<span>'; 
-				echo '<div class="col">'.$this->htmleditor('<insert name="show_block" module="clauses" count="4" cat_id="2" template="tovarid">').'</div>';
-				echo'</span>';
+				echo '<a href="https://dveri-vektor.ru/clauses/stati-o-mezhkomnatnykh-dveryakh" target="_blank">'.$this->diafan->_('Статьи о межкомнатных дверях').'</a>';
+			}
+			//Статьи о дверной фурнитуре
+			if(! empty($result["ids_param"][78]))
+			{
+				echo '<a href="https://dveri-vektor.ru/clauses/stati-o-dvernoy-furniture" target="_blank">'.$this->diafan->_('Статьи о дверной фурнитуре').'</a>';
 			}
 			//Статьи о дверях общие
 			if(! empty($result["ids_param"][75]))
 			{
-				echo '<span>'; 
-				echo '<div class="col">'.$this->htmleditor('<insert name="show_block" module="clauses" count="4" cat_id="3" template="tovarid">').'</div>';
-				echo'</span>';
+				echo '<a href="https://dveri-vektor.ru/clauses/stati-o-dveryakh-obschie" target="_blank">'.$this->diafan->_('Статьи о дверях общие').'</a>';
 			}
 		echo '</div>';
 
@@ -440,12 +526,13 @@ echo '<div class="shop-item-opis col-12 mt-5">';
 
 		//полное описание товара
         if (!empty($this->htmleditor($result['text']))) {
-            echo '<div class="tab-pane fade show active" id="opisanie" role="tabpanel" aria-labelledby="opisanie-tab">' . $this->htmleditor($result['text']) . '</div>';
+            echo '<div class="tab-pane fade table-responsive show active" id="opisanie" role="tabpanel" aria-labelledby="opisanie-tab">' . $this->htmleditor($result['text']) . '</div>';
         }
 
 		//Комплектующие
         if (!empty($this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">'))) {
-            echo '<div class="tab-pane fade" id="complectuyushie" role="tabpanel" aria-labelledby="complectuyushie-tab">';
+            echo '<div class="tab-pane table-responsive fade" id="complectuyushie" role="tabpanel" aria-labelledby="complectuyushie-tab">';
+			echo '<div class="snoska tovar_id_text_all fs_14 fst-italic mb-3 c_dgrey fw-bold px-2 py-1 lh-1_2">'.$this->htmleditor('<insert name="show_dynamic" module="site" id="7">').'</div>';
             echo $this->htmleditor('<insert name="show_block_rel" module="shop" count="99" images="1" template="relrows">');
             echo '</div>';
         }
@@ -459,7 +546,7 @@ echo '<div class="shop-item-opis col-12 mt-5">';
 		//Характеристики
         if(! empty($result["param"])) {
             echo '<div class="tab-pane fade" id="harakteristiki" role="tabpanel" aria-labelledby="harakteristiki-tab">';
-                echo $this->get('param', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
+                echo $this->get('botparam', 'shop', array("rows" => $result["param"], "id" => $result["id"]));
             echo '</div>';
         }
 

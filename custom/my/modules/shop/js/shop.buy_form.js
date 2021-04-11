@@ -158,7 +158,7 @@ function select_param_price(th, current_param) {
 		$('.js_shop_additional_cost_price', th).hide();
 		if($('.js_shop_param_price' + param_code + ', .shop_param_price' + param_code, th).length) {
 			$('.js_shop_param_price' + param_code + ', .shop_param_price'+param_code, th).show();
-			
+
 			$('.js_shop_additional_cost_price'+param_code, th).each(function(){
 				$(this).show();
 				$('#'+$(this).parents('label').attr('for')).attr('summ', $(this).attr('summ'));
@@ -184,7 +184,7 @@ function select_param_price(th, current_param) {
 			$('.js_shop_one_click, .shop_one_click', th).hide();
 			$('.js_shop_waitlist, .shop_waitlist', th).hide();
 		} else {
-			
+
 				if($('.js_shop_no_buy_good, .shop_no_buy_good', th).length) {
 					$('.js_shop_waitlist, .shop_waitlist', th).show();
 				} else {
@@ -242,11 +242,11 @@ function empty_param_price(th) {
   if (! $('.js_shop_param_price', th).length || $('.js_form_option_selected', th).length)
     return;
 
-  $('.shop-item-right .js_shop_param_price', th).each(function () {
-    if (!$(".shop-item-right .js_shop_no_buy", this).length) {
+  $('.js_shop_param_price', th).each(function () {
+    if (!$(".js_shop_no_buy", this).length) {
       for (var i = 0, atts = $(this).get(0).attributes, n = atts.length; i < n; i++) {
         if (atts[i].nodeName.indexOf("param") > -1) {
-          $(".shop-item-right select[name='" + atts[i].nodeName + "']", th).val(atts[i].nodeValue);
+          $("select[name='" + atts[i].nodeName + "']", th).val(atts[i].nodeValue);
         }
       }
       return false;
@@ -263,7 +263,7 @@ function init_shop_buy_form() {
 
 // Работа с характеристиками влияющих на цену
 function insertDependParametres() {
-	let depend_params = $('.shop-item-right select.js_shop_depend_param');
+	let depend_params = $('.shop-item-right .js_shop_depend_param');
 	let wrapper = $('.js-param-depends-price');
 	let block = '';
 	depend_params.each(function() {
@@ -290,6 +290,16 @@ function insertDependParametres() {
 				}
 			});
 			block += '<div class="param-block mb-3">' + labels + '</div>';
+		}
+		else if(depend_param.is('input')) {
+			let title = depend_param.data('title');
+			let value = depend_param.data('value');
+			block += '' +
+				'<div class="param-block mb-3">' +
+				'<div class="param-title fw-bold c_dblue mb-2">' + title + '</div>' +
+				'<label><input checked style="display: none" type="radio">' +
+				'<span class="js-select-depend-param">' + value + '</span></label>' +
+				'</div>';
 		}
 	});
 	if (block != '') {
