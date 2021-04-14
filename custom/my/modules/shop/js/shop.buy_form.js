@@ -256,9 +256,9 @@ function empty_param_price(th) {
 
 function init_shop_buy_form() {
 	$(".js_shop_form, .shop_form").each(function() {
-		empty_param_price($(this));
+		//empty_param_price($(this));
 		select_param_price($(this), false);
-	});
+	}).promise().done(changeFisrtPrice());
 }
 
 // Работа с характеристиками влияющих на цену
@@ -307,6 +307,13 @@ function insertDependParametres() {
 		wrapper.append(block);
 	}
 	$('[data-bs-toggle="tooltip"]').tooltip();
+}
+
+function changeFisrtPrice() {
+	let prices = $('.shop-item-right .js_shop_param_price:visible');
+	if (prices.length == 0) {
+		$('.shop-item-right .js_shop_depend_param option').eq(0).prop("selected", true).change();
+	}
 }
 
 // Выбор характерист влияющих на цену
