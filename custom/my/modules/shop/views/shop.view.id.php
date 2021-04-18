@@ -297,29 +297,26 @@ echo '<div class="shop-item-center col">';
 		}
 		echo '</div>';
 
+		echo '<div class="row pe-md-5 me-md-5 pe-0 me-0">';
 		if(! empty($result["ids_param"][80]))
 		{
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="11">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="11">').'</div>';
 		}
 		if(! empty($result["ids_param"][81]))
 		{
-			echo $result["ids_param"][81]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="12">').'</div>';
 		}
 		if(! empty($result["ids_param"][82]))
 		{
-			echo $result["ids_param"][82]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="13">').'</div>';
 		}
 		if(! empty($result["ids_param"][83]))
 		{
-			echo $result["ids_param"][83]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="14">').'</div>';
 		}
 		if(! empty($result["ids_param"][84]))
 		{
-			echo $result["ids_param"][84]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="15">').'</div>';
 		}
 		if(! empty($result["ids_param"][90]))
 		{
@@ -333,40 +330,33 @@ echo '<div class="shop-item-center col">';
 		}
 		if(! empty($result["ids_param"][88]))
 		{
-			echo $result["ids_param"][88]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="16">').'</div>';
 		}
 		if(! empty($result["ids_param"][85]))
 		{
-			echo $result["ids_param"][85]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="17">').'</div>';
 		}
 		if(! empty($result["ids_param"][86]))
 		{
-			echo $result["ids_param"][86]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="18">').'</div>';
 		}
 		if(! empty($result["ids_param"][87]))
 		{
-			echo $result["ids_param"][87]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="19">').'</div>';
 		}
 		if(! empty($result["ids_param"][92]))
 		{
-			echo $result["ids_param"][92]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="20">').'</div>';
 		}
 		if(! empty($result["ids_param"][93]))
 		{
-			echo $result["ids_param"][93]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="21">').'</div>';
 		}
 		if(! empty($result["ids_param"][94]))
 		{
-			echo $result["ids_param"][94]["name"];
-			echo '<div class="">'.$this->htmleditor('<insert name="show_block" module="site" id="">').'</div>';
+			echo '<div class="col-xl-2 col-3 mb-3">'.$this->htmleditor('<insert name="show_block" module="site" id="22">').'</div>';
 		}
-
+		echo '</div>';
 /*		if(empty($result["hide_compare"]))
 		{
 		    echo $this->get('compare_form', 'shop', $result);

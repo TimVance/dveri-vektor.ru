@@ -246,7 +246,7 @@ function empty_param_price(th) {
     if (!$(".js_shop_no_buy", this).length) {
       for (var i = 0, atts = $(this).get(0).attributes, n = atts.length; i < n; i++) {
         if (atts[i].nodeName.indexOf("param") > -1) {
-          $("select[name='" + atts[i].nodeName + "']", th).val(atts[i].nodeValue);
+          //$("select[name='" + atts[i].nodeName + "']", th).val(atts[i].nodeValue);
         }
       }
       return false;
@@ -256,18 +256,22 @@ function empty_param_price(th) {
 
 function init_shop_buy_form() {
 	$(".js_shop_form, .shop_form").each(function() {
-		empty_param_price($(this));
+		//empty_param_price($(this));
 		select_param_price($(this), false);
+	}).promise().done(changeFisrtPrice());
+}
+
+function changeFisrtPrice() {
+	let list = $(".shop_rows > div");
+	list.each(function () {
+		let item = $(this);
+		let prices = $('.js_shop_param_price:visible', item);
+		if (prices.length == 0) {
+			$('.js_shop_depend_param option', item).eq(0).prop("selected", true).change();
+		}
 	});
 }
 
-/*
-function selectFerstPrice() {
-	$list =$(".js_shop_param_price");
-}
- */
-
 $(document).ready(function() {
 	init_shop_buy_form();
-	//selectFerstPrice();
 });

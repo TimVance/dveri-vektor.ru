@@ -67,7 +67,7 @@ if ($result["row"]["price_arr"])
 		{
 			$param_code .= ' image_id="'.$price["image_rel"].'"';
 		}
-		echo '<div class="js_shop_param_price shop_param_price shop-item-price col pr-1 text-center"'.$param_code.' price-id-js="'.$price["id"].'">';
+		echo '<div class="js_shop_param_price shop_param_price shop-item-price col pr-1 text-nowrap text-center"'.$param_code.' price-id-js="'.$price["id"].'">';
 				if(! empty($price["old_price"]))
 				{
 				echo '<div class="shop_old_price price-old"><span class="red_polosa"><span class="shop_price_value strike">'.$price["old_price"].'<i class="fa fa-rub" aria-hidden="true"></i></span></span></div>';
@@ -179,7 +179,7 @@ if(! empty($waitlist))
 	</div>';
 }
 
-echo '<div class="js_shop_buy shop_buy col to-cart">';
+echo '<div class="js_shop_buy shop_buy col text-center to-cart">';
 	if (empty($result["row"]['is_file']) && empty($hide_submit))
 	{
 		echo '<input type="text" value="1" name="count" class="number" pattern="[0-9]+([\.|,][0-9]+)?" step="any">';
